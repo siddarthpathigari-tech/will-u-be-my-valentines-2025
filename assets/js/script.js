@@ -1,132 +1,101 @@
-// © github.com/papichans
-
 // Preloader
 let messagePhase = 1;
+
 const preloader = document.querySelector('.preloader');
-const button_next = document.querySelector('.next')
-const message = document.querySelector('.message')
+const button_next = document.querySelector('.next');
+const message = document.querySelector('.message');
 
 button_next.addEventListener('click', () => {
+
     messagePhase++;
+
     if (messagePhase == 2) {
-        message.classList.add('fade');
-        setTimeout(() => {
-            message.textContent = "I have something to ask you..."
-            message.classList.remove('fade');
-        }, 200); 
+        message.textContent = "I have something to ask you...";
     }
-    if (messagePhase == 3 ) {
+
+    if (messagePhase == 3) {
+        preloader.style.opacity = "0";
         setTimeout(() => {
-            preloader.style.opacity = 0;
-        }, 100)
-        setTimeout(() => {
-            preloader.style.display = 'none';
-        },  600)
+            preloader.style.display = "none";
+        }, 600);
     }
-})
 
-// No button hover
+});
 
+
+// Main Section
 const button_area = document.querySelector('.buttons-area');
 const button_no = document.querySelector('.answer-no');
 const button_yes = document.querySelector('.answer-yes');
 const image = document.querySelector('.content-image');
 const question = document.querySelector('.question');
+
 let imagePhase = 1;
 
-function changeImage() {
-    image.classList.add('fade');
-    if (imagePhase == 1) {
-        question.textContent = "Please no, don't say no!";
-    }
-    else if (imagePhase == 2) {
-        question.textContent = "Don't break my heart...";
-    }
-    else if (imagePhase == 3) {
-        question.textContent = "You’re my only hope...";
-    }
-    else if (imagePhase == 4) {
-        question.textContent = "Please, I’m begging you...";
-    }
-    else if (imagePhase == 5) {
-        question.textContent = "You’re all I want...";
-    }
-    else if (imagePhase == 6) {
-        question.textContent = "Please, don’t leave me hanging...";
-    }
-    setTimeout(() => {
-        image.src = 'assets/images/content-pics/img-2.jpg';
-        image.classList.remove('fade');
-    }, 180); 
-}
 
-function backtoImage() {
-    image.classList.add('fade');
-    setTimeout(() => {
-        if (imagePhase == 1) {
-            image.src = 'assets/images/content-pics/img-1.jpg';
-            question.textContent = "Will you be my valentine?";
-        }
-        else if (imagePhase == 2) {
-            image.src = 'assets/images/content-pics/img-3.jpg';
-            question.textContent = "I really like you, please?";
-        }
-        else if (imagePhase == 3) {
-            image.src = 'assets/images/content-pics/img-4.jpg';
-            question.textContent = "I can't imagine a day without you!";
-        }
-        else if (imagePhase == 4) {
-            image.src = 'assets/images/content-pics/img-5.jpg';
-            question.textContent = "Please, I just need this from you.";
-        }
-        else if (imagePhase == 5) {
-            image.src = 'assets/images/content-pics/img-6.jpg';
-            question.textContent = "I promise I'll be the best Valentine ever!";
-        }
-        else if (imagePhase == 6) {
-    image.src = 'assets/images/content-pics/img-7.jpg';
-    question.innerHTML = `
-    I'd choose you in every lifetime.<br>
-    Over and over.<br><br>
-    Happy Valentine's Day Sunandhini ❤️
-    `;
-}
-        }
-        }
-        }
-        image.classList.remove('fade');
-    }, 180); 
-}
-
+// NO button hover
 button_no.addEventListener('mouseover', () => {
+    imagePhase++;
+
+    if (imagePhase > 6) imagePhase = 6;
+
     changeImage();
 });
 
 button_no.addEventListener('mouseout', () => {
-    backtoImage();
+    backImage();
 });
 
-// Next Phase
 
-button_no.addEventListener('click', () => {
-    imagePhase++;
-    if (imagePhase == 6) {
-        button_no.disabled = true;
-        button_no.style.opacity = 0.5;
-    }
-});
+function changeImage() {
 
-// She said yes
+    image.classList.add('fade');
 
-// She said yes
-// She said yes
+    setTimeout(() => {
+
+        image.src = `assets/images/content-pics/img-${imagePhase + 1}.jpg`;
+
+        const texts = [
+            "",
+            "Please no... don't say no!",
+            "Don't break my heart...",
+            "You're my only hope...",
+            "Please... I need you...",
+            "I'll be the best Valentine ever!",
+            "You're my everything ❤️"
+        ];
+
+        question.textContent = texts[imagePhase] || "";
+
+        image.classList.remove('fade');
+
+    }, 200);
+}
+
+
+function backImage() {
+
+    image.classList.add('fade');
+
+    setTimeout(() => {
+
+        image.src = 'assets/images/content-pics/img-1.jpg';
+        question.textContent = "Will you be my valentine?";
+
+        image.classList.remove('fade');
+
+    }, 200);
+}
+
+
+// YES button click
 button_yes.addEventListener('click', () => {
 
     image.classList.add('fade');
 
     button_area.innerHTML = `
-    I choose you. Today. Tomorrow. Always ❤️<br><br>
-    Happy Valentine's Day Sunandhini 🫂
+        I choose you. Today. Tomorrow. Always ❤️<br><br>
+        Happy Valentine's Day Sunandhini 🫂
     `;
 
     question.textContent = "She said YES ❤️";
@@ -134,6 +103,6 @@ button_yes.addEventListener('click', () => {
     setTimeout(() => {
         image.src = 'assets/images/content-pics/img-8.jpg';
         image.classList.remove('fade');
-    }, 180);
+    }, 200);
 
 });
