@@ -118,7 +118,11 @@ button_no.addEventListener('click', () => {
 button_yes.addEventListener('click', () =>{
     image.classList.add('fade');
     button_area.innerHTML = '';
-    button_area.textContent = "Let's meet at our favorite place at 1:00 PM, See you! <3";
+    button_area.innerHTML = `
+Let's meet at our favorite place ❤️<br>
+Tomorrow at 1 PM.<br><br>
+I'll be waiting for you 🫶
+`;
     question.textContent = "YAY!"
     setTimeout(() => {
         image.src = 'assets/images/content-pics/img-8.jpg';
