@@ -115,19 +115,19 @@ button_no.addEventListener('click', () => {
 
 // She said yes
 
-button_yes.addEventListener('click', () =>{
+// She said yes
+button_yes.addEventListener('click', () => {
     image.classList.add('fade');
-    button_area.innerHTML = '';
-    button_area.innerHTML = `
 
-`;button_area.innerHTML = `
-Let's meet at our favorite place ❤️<br>
-Tomorrow at 1 PM.<br><br>
-I'll be waiting for you 🫶
-`;
-    question.textContent = "YAY!"
+    button_area.innerHTML = `
+    I choose you. Today. Tomorrow. Always ❤️<br><br>
+    Happy Valentine's Day Sunandhini 🫶
+    `;
+
+    question.textContent = "She said YES ❤️";
+
     setTimeout(() => {
         image.src = 'assets/images/content-pics/img-8.jpg';
         image.classList.remove('fade');
-    }, 180 )
+    }, 180);
 });
