@@ -119,6 +119,8 @@ button_yes.addEventListener('click', () =>{
     image.classList.add('fade');
     button_area.innerHTML = '';
     button_area.innerHTML = `
+
+`;button_area.innerHTML = `
 Let's meet at our favorite place ❤️<br>
 Tomorrow at 1 PM.<br><br>
 I'll be waiting for you 🫶
