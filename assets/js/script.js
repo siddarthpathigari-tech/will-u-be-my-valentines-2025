@@ -85,7 +85,11 @@ function backtoImage() {
         }
         else if (imagePhase == 6) {
             image.src = 'assets/images/content-pics/img-7.jpg';
-            question.textContent = "I’ll do anything, just say yes!";
+            question.innerHTML = `
+I’d choose you in every lifetime.<br>
+Over and over.<br><br>
+Happy Valentine's Day Honey 😘🫂
+`;
         }
         image.classList.remove('fade');
     }, 180); 
