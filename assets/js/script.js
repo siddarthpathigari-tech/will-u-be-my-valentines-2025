@@ -84,13 +84,13 @@ function backtoImage() {
             question.textContent = "I promise I'll be the best Valentine ever!";
         }
         else if (imagePhase == 6) {
-            else if (imagePhase == 6) {
     image.src = 'assets/images/content-pics/img-7.jpg';
     question.innerHTML = `
     I'd choose you in every lifetime.<br>
-    Over and over.<br><br>
+    Over and over…<br><br>
     Happy Valentine's Day Sunandhini ❤️
     `;
+        }
         }
         }
         image.classList.remove('fade');
