@@ -87,9 +87,10 @@ function backtoImage() {
     image.src = 'assets/images/content-pics/img-7.jpg';
     question.innerHTML = `
     I'd choose you in every lifetime.<br>
-    Over and over…<br><br>
+    Over and over.<br><br>
     Happy Valentine's Day Sunandhini ❤️
     `;
+}
         }
         }
         }
@@ -118,12 +119,14 @@ button_no.addEventListener('click', () => {
 // She said yes
 
 // She said yes
+// She said yes
 button_yes.addEventListener('click', () => {
+
     image.classList.add('fade');
 
     button_area.innerHTML = `
     I choose you. Today. Tomorrow. Always ❤️<br><br>
-    Happy Valentine's Day Sunandhini 🫶
+    Happy Valentine's Day Sunandhini 🫂
     `;
 
     question.textContent = "She said YES ❤️";
@@ -132,4 +135,5 @@ button_yes.addEventListener('click', () => {
         image.src = 'assets/images/content-pics/img-8.jpg';
         image.classList.remove('fade');
     }, 180);
+
 });
